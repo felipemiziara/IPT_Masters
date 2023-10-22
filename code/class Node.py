@@ -94,9 +94,3 @@ lista.head = inserirListaOrdenada(None, Node(5))
 #inserirListaOrdenada(lista.head, Node(2))
 
 print (lista)
-
-llpoli = LinkedList()
-
-def calculaPoli(l, pos):
-    result = None
-    for x
