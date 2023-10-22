@@ -21,6 +21,8 @@ class LinkedList:
         nodes.append("None")
         return " -> ".join(nodes)
     
+#inicia tudo
+    
 llist = LinkedList()
 first_node = Node(17)
 llist.head = first_node
