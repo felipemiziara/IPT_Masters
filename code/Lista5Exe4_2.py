@@ -78,6 +78,3 @@ if __name__ == '__main__':
 #lista = Lista5Exec4()
 #lista.converter("a+b*(c^d-e)^(f+g*h)-i")
 #print(lista.operador)
-
-#           abcd^e-fg+h*(*+i-
-# Correto:  abcd^e-fgh*+^*+i-
