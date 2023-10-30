@@ -50,7 +50,7 @@ def inOrdem(tree):
     pilha = []
     no = tree
     #Lado esquerdo primeiro 
-    pilha.append(no.dir)
+    pilha.append(no)
     while len(pilha):
         if (no.esq is not None):
             pilha.append(no.esq)
@@ -59,4 +59,16 @@ def inOrdem(tree):
         if(no.dir is not None):
             pilha.append(no.dir)
 
-inOrdem(tree)
+def inOrdemCp(tree):
+    pilha = []
+    node = tree
+    while node or pilha:
+        if node:
+            pilha.append(node)
+            node = node.esq
+        else:
+            node = pilha.pop()
+            print(str(node.data), end= "," )
+            node = node.dir
+
+inOrdemCp(tree)
