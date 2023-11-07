@@ -1,0 +1,4 @@
+﻿id	label	x	y	cluster	weight<Links>	weight<Documents>	weight<Citations>	weight<Norm. citations>	score<Avg. pub. year>	score<Avg. citations>	score<Avg. norm. citations>
+1	"bieman, jm"	-0.459	-0.1179	1	1	1	6	1	1993	6	1
+2	"gordon, vs"	-0.459	0.1179	1	1	1	6	1	1993	6	1
+3	"nalendra, a. k."	0.9181	-0	2	0	1	0	1	2021	0	1
