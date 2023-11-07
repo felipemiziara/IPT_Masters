@@ -46,20 +46,11 @@ class Lista5Exec4:
             print(i)
             if(self.eLetra(i)):
                 self.result.append(i)
-            elif(i == '('):
-                self.empilhar(i)
-            elif(i == ')'):
-                while ((not self.vazio()) and (self.verTopo() != '(')):
-                    ele = self.desempilhar()
-                    self.result.append(ele)
-                if not self.vazio() and self.verTopo() != '(':
-                    return -1
-                else:
-                    self.desempilhar()
             else:
                 while (not self.vazio()) and (self.prioridade(i)):
                     self.result.append(self.desempilhar())
-                self.empilhar(i)
+                if(i != '(' and i != ')'):
+                    self.empilhar(i)
         while (not self.vazio()):
             self.result.append(self.desempilhar())
         

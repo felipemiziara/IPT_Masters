@@ -1,3 +1,6 @@
+import sys
+
+
 class TreeNode:
     def __init__(self, data):
         self.data = data
@@ -38,13 +41,52 @@ def insere(tree, elemento):
             tree.dir = insere(tree.dir,elemento)
             if (altura(tree.esq) - altura(tree.dir))==-2:
                 if(elemento.data > tree.dir.data):
-                    print("rotacao esquerda")
+                    print("rotacao esquerda: " + str(elemento.data) + " contra: " + str(tree.dir.data))
                     tree = rotacaoEsquerda(tree)
                 else:
                     print("rotacao direita esquerda")
                     tree = rotacaoDirEsquerda(tree)
         tree.alt = max(altura(tree.esq), altura(tree.dir))+1
     return tree
+
+def print_tree(root, level=0):
+    if root is None:
+        return
+
+    print(" " * (level * 2) + "O" + str(root.data))
+
+    if root.esq is not None:
+        print_connection(root, root.esq)
+        print_tree(root.esq, level + 1)
+    elif root.dir is not None:
+        print_connection(None, root.dir)
+
+    if root.dir is not None:
+        print_connection(root, root.dir)
+        print_tree(root.dir, level + 1)
+    elif root.esq is not None:
+        print_connection(None, root.esq)
+
+def print_connection(node, child):
+    """Prints a connection arrow to the child node.
+
+    Args:
+        child: The child node.
+    """
+    multi = 0
+    if node:
+        multi = len(str(node.data)) + 1
+    sys.stdout.write(" /")
+    sys.stdout.write(" " * multi)
+    sys.stdout.flush()
+
+    if child is None:
+        sys.stdout.write("X")
+    else:
+        sys.stdout.write("O")
+        sys.stdout.write(str(child.data))
+    sys.stdout.flush()
+
 
 def imprimeArvore(tree, nivel=0):
     if tree is not None :
@@ -90,8 +132,8 @@ def ordernaAVL(vector):
     avl = None
     for i in vector:
         avl = insere(avl, TreeNode(i))
-    return avl
-    #inOrdem (avl)
+    #return avl
+    inOrdem (avl)
     
 def inOrdem(tree):
     pilha = []
@@ -106,8 +148,24 @@ def inOrdem(tree):
         if(no.dir is not None):
             pilha.append(no.dir)
 
-arvore = [30,10,9,12]
+arvore = [30,31,35]
 
-tree = ordernaAVL(arvore)
+tree = None
+tree = insere(tree, TreeNode(30))
+print_tree(tree)
+print("-------------------------------------")
+tree = insere(tree, TreeNode(31))
+print_tree(tree)
+print("-------------------------------------")
+tree = insere(tree, TreeNode(35))
+print_tree(tree)
+print("-------------------------------------")
 
-imprimeArvore(tree)
+tree = insere(tree, TreeNode(33))
+print_tree(tree)
+print("-------------------------------------")
+#tree = ordernaAVL(arvore)
+
+#insere(tree, TreeNode(33))
+
+#imprimeArvore(tree)
