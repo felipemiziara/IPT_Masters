@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Exec EP1",
+            "type": "shell",
+            "command": "${command:python.interpreterPath}",
+            "args": [
+                "code/EP1/FileOp.py",
+                "code/EP1/arq1.txt",
+                "code/EP1/arq2.txt"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
