@@ -7,8 +7,8 @@
             "command": "${command:python.interpreterPath}",
             "args": [
                 "code/EP1/FileOp.py",
-                "code/EP1/arq1.txt",
-                "code/EP1/arq2.txt"
+                "code/EP1/arq3.txt",
+                "code/EP1/arq4.txt"
             ],
             "problemMatcher": [],
             "group": {

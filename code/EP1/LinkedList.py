@@ -46,13 +46,13 @@ class LinkedList:
             self.size +=1
     
     def imprimirNumero(self):
-        pilha = LinkedList()
-        ele = self.head
-        while ele:
-            pilha.addPilha(Node(ele.data))
-            ele = ele.prox
-        print(pilha)
-
+        node = self.head
+        nodes = []
+        while node is not None:
+            nodes.append(str(node.data))
+            node = node.prox
+        nodes.reverse()
+        return "".join(nodes)
 
     def imprimir(self):
         print(self)

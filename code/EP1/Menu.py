@@ -8,7 +8,6 @@ class Menu:
 
     def execSelection(self, opc):
         if(opc>=0):
-            #print("log: opcão selecionada ->" + str(self.opcioes[opc -1].opc))
             self.opcioes[opc-1].func()
 
 class MenuItem:
