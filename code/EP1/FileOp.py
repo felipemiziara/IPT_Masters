@@ -15,7 +15,7 @@ def gravaValor3Opc():
     global lista3
     if(lista3 is None):
         print(" ")
-        print ("ERROR: Nenhuma operação foi executa ainda. Tente alguma operação com as opções 1 ou 2.")
+        print ("ERROR: Nenhuma operação foi executa ainda. Tente alguma operação com as opções 3 ou 4.")
         print(" ")
     else:
         arquivo3 = input("Entre com o nome do arquivo:")
