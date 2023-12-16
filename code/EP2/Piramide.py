@@ -1,5 +1,6 @@
-def clibingPyramid(n, brokenRocks, tabulation):
-    possibilidades = 0
+def clibingPyramid(n, brokenRocks):
+
+    tabulation = [[0 for _ in range(n)] for _ in range(n)]
     """ 
         Setar a base da piramide com todas as possibilidades de início:
             1 - Para as pedras que podem iniciar a subida setar 1;
@@ -37,10 +38,8 @@ if __name__ == "__main__":
     pedras = {}
     pedras[2] = 1
     pedras[3] = 2
-    tabulation = [[0 for _ in range(nivel)] for _ in range(nivel)]
 
-    print(f"Número de possibilidades diferentes: {clibingPyramid(nivel, pedras, tabulation)}")
-    print(tabulation)
+    print(f"Número de possibilidades diferentes: {clibingPyramid(nivel, pedras)}")
 
     nivel = 5
     qtdPedras = 3
@@ -48,6 +47,5 @@ if __name__ == "__main__":
     pedras[3] = 2
     pedras[2] = 3
     pedras[1] = 4
-    tabulation = [[0 for _ in range(nivel)] for _ in range(nivel)]
-    print(f"Número de possibilidades diferentes: {clibingPyramid(nivel, pedras, tabulation)}")
-    print(tabulation)
+
+    print(f"Número de possibilidades diferentes: {clibingPyramid(nivel, pedras)}")
