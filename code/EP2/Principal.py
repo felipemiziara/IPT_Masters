@@ -21,10 +21,27 @@ def lerArquivo(arqNome, pedrasDefeituosas):
 
         arquivo.close()
         print(">> Valor lido, estrutura de dados criada!")
-    except FileNotFoundError:
-        print("** Error: Arquivo não existe **")
+    except FileNotFoundError as erro:
+        print(f"** Error: Arquivo não existe ** Error: {erro}")
+        return 0
 
     return n
+
+def verificaEntradas(niveis, qtdPedras, pedrasDefeituosas):
+    if(niveis < 1 or niveis > 1000):
+        print("+++++ ERROR: O número de níveis não suportado")
+        return False
+    if(qtdPedras < 0 or qtdPedras > (niveis*(niveis+1))/2):
+        print("+++++ ERROR: O número de pedras defeituosas não suportado")
+        return False
+    for p in pedrasDefeituosas:
+        if p < 1 or p > niveis:
+            print("+++++ ERROR: O nivel da pedra defeituosa não é suportado.")
+            return False
+        if pedrasDefeituosas[p] < 1 or pedrasDefeituosas[p] > (niveis - (p-1)):
+            print("+++++ ERROR: A posição da pedra defeituosa não existe.")
+            return False
+    return True
 
 if __name__ == "__main__": 
     n = 0
@@ -36,8 +53,6 @@ if __name__ == "__main__":
     print(f">> Quantidade de pedras na base da pirâmide: {n}")
     print(f">> Lista de pedras defeituosas: {pedrasDefeituosas}")
 
-    possibilidades = clibingPyramid(n, pedrasDefeituosas)
-    print(f">>>>>Número de possibilidades diferentes: {possibilidades}")
-    
-
-
+    if verificaEntradas(n, len(pedrasDefeituosas), pedrasDefeituosas):
+        possibilidades = clibingPyramid(n, pedrasDefeituosas)
+        print(f">>>>>Número de possibilidades diferentes: {possibilidades}")

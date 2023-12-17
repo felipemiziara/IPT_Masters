@@ -7,15 +7,17 @@ Organização dos arquivos:
 
 Os aquivos desta entrega estão na pasta /code/EP2.
 São eles:
-    * Piramide.py  -- Arquivo principal da entrega. Contém a construção dos menus, operações de leitura e escrita dos arquivos. Também aqui há as funções de soma e multiplicação.
-    * LinkedList.py -- Arquivo contém as classes LinkedList e Node e seus métodos de inserção. É aqui que todas a lógica de lista é construída e trabalhada. 
-    * Menu.py -- Aqui têm as classes Menu e MenuItem, lógica para trabalhar com a construção do menu, gerenciamento das opções e seleção do menu. 
+    * Piramide.py  -- Arquivo contém o algoritmo que calcula a quantidade de possibilidades de se subir a piramide.
+    * Principal.py -- Aqui é o arquivo principal, este é o arquivo que deve ser executado, contém a leitura dos arquivos e a chamada das funções da piramide.
+    * Entrada*.txt -- O * significa um numeral ordinal, representa o conjunto de entradas testes do algoritmo. 
+        Entrada1.txt ---> É o teste do primeiro exemplo do enunciado do exercício programa 2.
+        Entrada2.txt ---> É o teste do segundo exemplo do enunciado do exercício programa 2.
+        Entrada3.txt ---> Arquivo com input inválido para tester o teste e limites esperados pelo exercício programa.
+        Entrada4.txt ---> Arquivo com input inválido para tester o teste e limites esperados pelo exercício programa.
 
 Execução do programa:
 
-Para rodar o programa, basta executar o arquivo FileOp.py. É nele que contém a função Main. 
-Os arquivos de leituras podem ser passados via parametro de execução, exemplo: 
+Para rodar o programa, vc precisa colocar o caminho do arquivo de entrada no script Principal.py. 
+Vá até a linha 51 (uma boa ideia) e coloque o endereço do arquivo que deseja, no caso do meu código o projeto python está na pasta raiz IPT, e os arquivos deste exercício programa está na pasta code/EP2.
 
->> python3 /code/ep1/FileOp.py arq1.txt arq2.txt
-
-Ao executar sem passar os paramêtros, o programa irá pedir o seu input durante a execução. Se passar somente 1 parâmetro, o software irá entender que é o V1.
+Assim, após configurar o seu endereço de arquivo de entrada, é só executar o script python Principa.py e acompanhar no terminal o resultado da execução.
